@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class history extends StatelessWidget {
+  const history({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +11,13 @@ class HomePage extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         iconSize: 37,
         items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.history,
+              color: Color(0xFF00109D),
+            ),
+            label: 'History',
+          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,

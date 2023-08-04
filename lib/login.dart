@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:apl_bk_uji_level/api.dart';
-import 'package:apl_bk_uji_level/home_page.dart';
+import 'package:apl_bk_uji_level/history.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
         content: Text(Response['message']),
       ));
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomePage()));
+          MaterialPageRoute(builder: (context) => const history()));
     }
   }
 
@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
                       onPressed: () {},
                       child: InkWell(
                         onTap: () {
-                          HomePage();
+                          history();
                         },
                         child: Text(
                           'Log In',

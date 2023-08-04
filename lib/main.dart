@@ -1,6 +1,7 @@
+import 'package:apl_bk_uji_level/home.dart';
 import 'package:apl_bk_uji_level/login.dart';
 import 'package:apl_bk_uji_level/splash.dart';
-import 'home_page.dart';
+import 'history.dart';
 import 'package:apl_bk_uji_level/profile.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Splash(),
+        body: home_page(),
       ),
     );
   }
