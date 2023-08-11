@@ -6,36 +6,6 @@ class history extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        iconSize: 37,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.history,
-              color: Color(0xFF00109D),
-            ),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Color(0xFF00109D),
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Color(0xFF00109D),
-            ),
-            label: 'Profile',
-          ),
-        ],
-        selectedItemColor: Color(0xFF00109D),
-        unselectedItemColor: Color(0xFF00109D),
-      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -68,7 +38,7 @@ class history extends StatelessWidget {
                         Text(
                           "Starbhak.Konseling",
                           style: TextStyle(
-                            color: Color(0xFF00109D),
+                            color: Color.fromARGB(255, 255, 255, 255),
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
@@ -77,7 +47,7 @@ class history extends StatelessWidget {
                         Text(
                           "Hello, tyo simanjuntak",
                           style: TextStyle(
-                            color: Color(0xFF00109D),
+                            color: Color.fromARGB(255, 255, 255, 255),
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
                           ),

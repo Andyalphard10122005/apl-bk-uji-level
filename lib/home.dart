@@ -1,4 +1,7 @@
-import 'package:apl_bk_uji_level/buat_jadwal.dart';
+import 'package:apl_bk_uji_level/history.dart';
+import 'package:apl_bk_uji_level/input.dart';
+import 'package:apl_bk_uji_level/profile.dart';
+import 'package:apl_bk_uji_level/update.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,39 +17,6 @@ class _home_pageState extends State<home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        iconSize: 37,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.history,
-              color: Color(0xFF00109D),
-            ),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Color(0xFF00109D),
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Color(0xFF00109D),
-            ),
-            label: 'Profile',
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-          });
-        },
-        selectedItemColor: Color(0xFF00109D),
-        unselectedItemColor: Color(0xFF00109D),
-      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -106,13 +76,13 @@ class _home_pageState extends State<home_page> {
                   GestureDetector(
                     onTap: () => {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => buatjadwal()))
+                          MaterialPageRoute(builder: (context) => InputPage()))
                     },
                     child: Row(
                       children: [
                         Container(
                           margin: EdgeInsets.only(
-                            left: 240,
+                            left: 280,
                           ),
                           width: 150,
                           height: 35,
@@ -180,12 +150,13 @@ class _home_pageState extends State<home_page> {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(top: 10, left: 300),
+                                  margin: EdgeInsets.only(top: 10, left: 290),
                                   width: 100,
                                   height: 100,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8)),
-                                  child: Image.asset("images/Bu sheila.png"),
+                                  child: ClipOval(
+                                    child: Image.asset("images/Bu sheila.png",
+                                        fit: BoxFit.cover),
+                                  ),
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(top: 120),
@@ -232,36 +203,42 @@ class _home_pageState extends State<home_page> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => buatjadwal()))
+                                            builder: (context) => update()))
                                   },
                                   child: Container(
+                                    width: 120,
+                                    height: 35,
                                     margin:
-                                        EdgeInsets.only(left: 180, top: 185),
-                                    width: 150,
-                                    height: 40,
+                                        EdgeInsets.only(top: 200, left: 220),
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
-                                        color: Color(0xFFECB600)),
+                                      color: Color(
+                                          0xFFECB600), // Menambahkan warna biru
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                    ),
                                     child: Center(
+                                      // Tambahkan Center untuk menengahkan teks
                                       child: Text(
-                                        "Edit Jadwal",
+                                        'Detail',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            fontSize: 15),
+                                            color: Colors
+                                                .white), // Mengubah warna teks menjadi putih untuk kontras dengan latar belakang biru
                                       ),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 340, top: 185),
-                                  child: IconButton(
-                                    icon: Icon(Icons.delete),
-                                    iconSize: 30,
-                                    color: Colors.red,
-                                    onPressed: () {
-                                      print('Icon clicked');
+                                  margin: EdgeInsets.only(top: 200, left: 350),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('Delete icon tapped');
                                     },
+                                    child: Icon(
+                                      Icons.delete,
+                                      color: Colors.red,
+                                      size: 30,
+                                    ),
                                   ),
                                 )
                               ],
